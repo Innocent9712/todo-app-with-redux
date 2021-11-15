@@ -1,16 +1,15 @@
-import { ADD_TODO } from "../constants";
+import { ADD_TODO, REMOVE_TODO } from "../constants";
+const initialState = []
 
 
-export const todoReducer = (state, action) => {
+export const todoReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_TODO: {
-            if (state.todos) {
-                return {...state, todos: [...state.todos, action.payload]}
-            } else {
-                return {...state, todos: [action.payload]}
-            }
-        }
+        case ADD_TODO: 
+            return [...state, action.payload]
+        case REMOVE_TODO:
+            console.log(state)
+            return state.filter(todo=> todo.id !== action.payload )
         default:
-            return {state}
+            return state
     }
 }

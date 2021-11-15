@@ -33,15 +33,14 @@ export const Login = ({props,auth}) => {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (userDetails.username && userDetails.password) {
+        if (userDetails && auth) {
             if (userDetails.username === auth.username && userDetails.password === auth.password) {
                 setUserAuth(true)
-
             } else {
                 alert("Invalid login details")
             }  
         } else {
-            alert("incomplete login details")
+            alert("user is not registered, please sign up.")
         }
     }
     return (

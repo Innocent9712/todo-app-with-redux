@@ -1,12 +1,12 @@
 
 import { LOGIN, SIGN_UP } from "../constants"
-
-const authReducer = (state = {}, action) => {
+const initialState = {}
+const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case SIGN_UP:
             return {...state, userDetails : action.payload}
         case LOGIN:
-            return {...state}
+            return state
         default: 
             return state
     }

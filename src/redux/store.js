@@ -2,6 +2,8 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import {  STORE } from "./constants";
 import reducers from "./reducers/rootReducer";
+import { composeWithDevTools } from 'redux-devtools-extension';
+
 
 const store = () => {
     let initialState = localStorage.getItem(STORE)
@@ -21,7 +23,7 @@ const store = () => {
     return createStore(
         reducers,
         initialState,
-        applyMiddleware(persistStoreState, thunk)
+        composeWithDevTools(applyMiddleware(persistStoreState, thunk))
     )
 }
 

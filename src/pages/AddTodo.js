@@ -3,13 +3,12 @@ import { connect } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { addTodo } from '../redux/actions/todoActions'
 
-export const AddTodo = ({props, addTodo, state, todos}) => {
-    console.log(todos)
-    console.log(state)
+export const AddTodo = ({addTodo, state, todos}) => {
     const navigate = useNavigate()
     const [form, setForm] = useState({
         id: Date.now(),
-        todo: ""
+        todo: "",
+        completed: false
     })
 
     const handleChange = (e) => {
