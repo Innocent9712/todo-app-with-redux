@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
+import '../App.css';
 import { loginAction } from '../redux/actions/loginAction'
 
 export const Login = ({props,auth}) => {
@@ -16,7 +17,6 @@ export const Login = ({props,auth}) => {
     })
 
     const [showPassword, setShowPassword] = useState(false)
-    const [buttonValue, setButtonValue] = useState("show password")
 
     
     const handleChange = (e) => {
@@ -28,7 +28,6 @@ export const Login = ({props,auth}) => {
     const handleShow = (e) => {
         e.preventDefault()
         showPassword?setShowPassword(false):setShowPassword(true)
-        showPassword?setButtonValue("hide password"):setButtonValue("show password")
     }
     
     const handleSubmit = (e) => {
@@ -45,16 +44,16 @@ export const Login = ({props,auth}) => {
     }
     return (
         <div>
-            <h3>Login</h3>
+            <h3 className="header">Login</h3>
             <form onSubmit={handleSubmit}>
                 <label>Username</label><br/>
                 <input type='text' name='username' placeholder="username" value={userDetails.username} onChange={handleChange} /><br/>
                 <label>Password</label>
-                <div>
+                <div className="password-container">
                     <input type={showPassword?"text":"password"} name='password' placeholder='password' value={userDetails.password} onChange={handleChange} />
-                    <button onClick={handleShow}>{buttonValue}</button>
+                    <button onClick={handleShow}>{showPassword? "hide password": "show password"}</button>
                 </div>
-                <button type="submit">Login</button>
+                <button className="submit" type="submit">Login</button>
             </form>
             <p>Don't have an account yet? <Link to={'/signup'}>Sign up</Link></p>
         </div>

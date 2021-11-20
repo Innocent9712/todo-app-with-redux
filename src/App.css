@@ -1,13 +1,124 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-
-@layer components {
-  .App {
-    line-height: 1.5;
-    min-height: 100vh;
-    @apply container mx-12 w-8 bg-black
+.App {
+  display: flex;
+  justify-content: center;
+  /* width: 80%; */
+  margin-inline: auto;
+  padding-top: 3em;
+  background-color: #FFBE0B;
+  min-height: 100vh;
   }
 
-}
+  .header {
+    margin: 0.4em 0;
+    margin-bottom: 1.4em;
+    font-size: 1.3em;
+    font-weight: 500;
+    color: #FBFFF1
+  }
+
+  /* Login & SignUp */
+  form label, form input {
+    margin: 0.6em 0;
+  }
+
+  .password-container {
+    display: flex;
+  }
+
+  .password-container button {
+    font-size: 0.7em;
+    margin: 0.8em 0;
+    display: block;
+    background-color: #82B865;
+  }
+
+  .submit {
+    width:30%;
+    padding: 0.4em;
+    background-color: #284B63 ;
+    margin: 0.5em 0;
+  }
+
+  /* TodoList */
+
+  .todo-list-container {
+    width: 70%;
+  }
+
+  .todo-list {
+    padding: 0.3em;
+    border: 2px solid  #4C061D;
+    border-radius: 0.2em;
+    font-size: 1.3em;
+  }
+
+  .todo {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 0.7em 0.4em;
+  }
+
+  .todo p {
+    width: 60%;
+    padding: 0.6em;
+  }
+
+  .todo-list-btn {
+    display: flex;
+    font-size: 0.6em;
+  }
+
+  .todo-list-btn button {
+    padding: 0.4em;
+    margin-inline: 0.5em;
+  }
+
+  .todo-list-btn button:nth-child(2) {
+    background-color: #E15554;
+  }
+
+  .todo-list-btn button:nth-child(1) {
+    background-color: #284B63;
+  }
+
+  .empty-todo {
+    font-weight: 400;
+    font-size: 1.6em;
+    text-align: center;
+  }
+
+  .completed {
+    background-color: #82B865;
+
+  }
+  
+
+  .link-to-todo {
+    margin: 2em auto;
+    padding: 0.4em;
+    width: 5.4em;
+    margin-inline: auto;
+    background-color: #1C77C3;
+  }
+
+  /* AddTodo */
+
+  .todo-input-container {
+    display: flex;
+  }
+
+  .todo-input-container button {
+    margin: 0.7em 0.2em;
+    max-width: 6em;
+    background-color: #284B63;
+  }
+
+  .todo-input-container input {
+    width: 70%;
+  }
+
+  .todo-input {
+    width: 60%;
+  }

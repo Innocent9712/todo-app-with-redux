@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from './pages/Login';
-import SignUp from './pages/SignUp';
+import Login from './components/Login';
+import SignUp from './components/SignUp';
 import './App.css';
-import TodoList from './pages/TodoList';
-import AddTodo from './pages/AddTodo';
+import TodoList from './components/TodoList';
+import AddTodo from './components/AddTodo';
 
 function App(props) {
 

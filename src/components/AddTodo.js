@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import { connect } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { addTodo } from '../redux/actions/todoActions'
@@ -29,16 +29,24 @@ export const AddTodo = ({addTodo, state, todos}) => {
         navigate('/todos')
     }
 
+    const inputRef = useRef(null)
+
+    useEffect(() => {
+        inputRef.current.focus()
+    }, [])
+
     return (
-        <div>
-            <h3>Todo</h3>
+        <div className="todo-input">
+            <h3 className="header">Todo</h3>
             <form onSubmit={handleSubmit}>
-                <label>Todo</label>
-                <input type='text' name='todo' placeholder='Todo' value={form.todo} onChange={handleChange}/>
-                <button type="submit">add</button>
+                <label>Todo Text Here</label>
+                <div className="todo-input-container">
+                    <input type='text' name='todo' placeholder='Todo' value={form.todo} onChange={handleChange} ref={inputRef}/>
+                    <button className="submit" type="submit">add</button>
+                </div>
             </form>
             <Link to="/todos">
-            <button>cancel</button>
+            <button className="link-to-todo">cancel</button>
             </Link>
         </div>
     )

@@ -45,18 +45,23 @@ function SignUp(props) {
         }
     }
 
+    const handleShow = (e) => {
+        e.preventDefault()
+        showPassword?setShowPassword(false):setShowPassword(true)
+    }
+
     return (
         <div>
-            <h3>SignUp</h3>
+            <h3 className="header">SignUp</h3>
             <form onSubmit={handleSubmit} >
-                <label>Username</label>
-                <input type='text' name='username' value={userDetails.username} onChange={handleChange} />
+                <label>Username</label><br/>
+                <input type='text' name='username' placeholder="username" value={userDetails.username} onChange={handleChange} /><br/>
                 <label>Password</label>
-                <div>
-                    <input type={showPassword?"text":"password"} name='password' value={userDetails.password} onChange={handleChange} />
-                    <p onClick={()=> setShowPassword(true?false:true)}>{showPassword? "hide password": "show password"}</p>
+                <div className="password-container">
+                    <input type={showPassword?"text":"password"} name='password' placeholder='password'  value={userDetails.password} onChange={handleChange} />
+                    <button onClick={handleShow}>{showPassword? "hide password": "show password"}</button>
                 </div>
-                <button type="submit" >Sign up</button>
+                <button className="submit" type="submit" >Sign up</button>
             </form>
             <p>Already have an account? <Link to="/login">Login</Link></p>
         </div>

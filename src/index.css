@@ -1,6 +1,3 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
 
 
 /*-----------------------*/
@@ -39,8 +36,24 @@ select {
     font: inherit;
 }
 
+a{
+  text-decoration: none;
+}
+
+button {
+  outline: none;
+  border: none;
+  border-radius: 0.3em;
+  color: #FBFFF1;
+}
+
+input {
+  padding: 0.6em
+}
+
 
 body {
+  min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
